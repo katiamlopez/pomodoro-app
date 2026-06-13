@@ -17,36 +17,32 @@
     </header>
 
     <section class="setup-section">
-      <h2>Session setup</h2>
+        <h2>Session setup</h2>
+        <p>Choose your work intervals</p>
 
-      <label for="intervals">Work intervals</label>
-      <input 
-        type="number" 
-        id="intervals" 
-        name="intervals" 
-        min="2" 
-        max="10" 
-        value="4"
-      >
+        <div class="interval-selector">
+            <button type="button" id="decrease-intervals">−</button>
+
+            <span id="interval-count">4</span>
+
+            <button type="button" id="increase-intervals">+</button>
+        </div>
     </section>
 
     <section class="timer-section">
-      <p class="mode-label">Work Mode</p>
-      <div class="mode-icon">🍅</div>
+      <p class="session-step" id="session-step">Work 1 of 4</p>
+      <div class="mode-icon" id="mode-icon">🍅</div>
 
-      <div class="timer-display">
+      <div class="timer-display" id="timer-display">
         25:00
       </div>
 
-      <p class="interval-progress">
-        Interval 1 of 4
-      </p>
     </section>
 
     <section class="controls">
-      <button type="button">Start</button>
-      <button type="button">Pause</button>
-      <button type="button">Reset</button>
+      <button type="button" aria-label="Start">▶</button>
+      <button type="button" aria-label="Pause">⏸</button>
+      <button type="button" aria-label="Reset">↻</button>
     </section>
 
   </section>
