@@ -7,6 +7,7 @@ const startButton = document.querySelector("#start-button");
 const pauseButton = document.querySelector("#pause-button");
 const resetButton = document.querySelector("#reset-button");
 const modeIcon = document.querySelector("#mode-icon");
+const timerText = document.querySelector("#timer-text");
 
 // botones [-] [+] intervalos
 
@@ -39,6 +40,16 @@ let timeId = null;
 let breakTime = 1* 60;
 let isWorkMode = true;
 let currentInterval = 1;
+
+function updateTimerDisplay() {
+    let minutes = Math.floor((timeLeft) / 60);
+    let seconds = timeLeft % 60;
+    timerText.innerText = String(minutes).padStart(2, "0") + ":" + String(seconds).padStart(2, "0");
+
+    let duration = isWorkMode ? workTime : breakTime;
+    let progress = ((duration - timeLeft) / duration) * 100;
+    timerDisplay.style.setProperty("--progress", progress + "%");
+}
 
 startButton.addEventListener("click", function() {
   if (timeId === null) {
@@ -88,11 +99,5 @@ resetButton.addEventListener("click", function(){
     timeLeft = workTime;
     updateTimerDisplay();
 });
-
-function updateTimerDisplay() {
-    let minutes = Math.floor((timeLeft) / 60);
-    let seconds = timeLeft % 60;
-    timerDisplay.innerText = String(minutes).padStart(2, "0") + ":" + String(seconds).padStart(2, "0");
-}
 
 

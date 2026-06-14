@@ -90,16 +90,40 @@ body {
 }
 
 .timer-display {
-    width: 220px;
-    height: 220px;
-    margin: 0 auto 28px;
-    border: 12px solid #f7c6d4;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    font-weight: bold;
+  --progress: 0%;
+
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 28px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bold;
+  position: relative;
+
+  background: conic-gradient(
+    #f7e3eb 0%,
+    #f7e3eb var(--progress),
+    #f7c6d4 var(--progress),
+    #f7c6d4 100%
+  );
+}
+
+.timer-display::before {
+  content: "";
+  position: absolute;
+  width: 185px;
+  height: 185px;
+  border-radius: 50%;
+  background-color: #fffdf8;
+}
+
+#timer-text {
+  position: relative;
+  z-index: 1;
 }
 
 .interval-progress {
