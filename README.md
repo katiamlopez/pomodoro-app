@@ -7,7 +7,7 @@ This project was developed as the final project for the Codédex JavaScript cour
 ## ✨ Features
 
 - Select between **2 and 10 work intervals**
-- **25-minute work sessions** and **5-minute break sessions**
+- **25-minute work sessions** and **10-minute break sessions**
 - Start, pause, and reset controls
 - Automatic transition between **Work Mode 🍅** and **Break Mode ☕**
 - Session progress tracking
