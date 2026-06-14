@@ -91,13 +91,19 @@ pauseButton.addEventListener("click", function(){
 });
 
 resetButton.addEventListener("click", function(){
-    if (timeId !== null) {
-        clearInterval(timeId);
-        timeId = null;
-    }
+  if (timeId !== null) {
+    clearInterval(timeId);
+    timeId = null;
+  }
 
-    timeLeft = workTime;
-    updateTimerDisplay();
+  isWorkMode = true;
+  currentInterval = 1;
+  timeLeft = workTime;
+
+  sessionStep.textContent = "Work 1 of " + totalIntervals;
+  modeIcon.innerText = "🍅";
+
+  updateTimerDisplay();
 });
 
 
