@@ -6,6 +6,7 @@ const timerDisplay = document.querySelector("#timer-display");
 const startButton = document.querySelector("#start-button");
 const pauseButton = document.querySelector("#pause-button");
 const resetButton = document.querySelector("#reset-button");
+const modeIcon = document.querySelector("#mode-icon");
 
 // botones [-] [+] intervalos
 
@@ -27,7 +28,7 @@ decreaseButton.addEventListener("click", function() {
 
 function updateDisplay() {
     intervalCount.textContent = totalIntervals;
-    sessionStep.textContent = "Work 1 of " + totalIntervals;
+    sessionStep.textContent = "Work " + currentInterval + " of " + totalIntervals;
 };
 
 //botones [▶] [⏸] [↻] controles
@@ -35,11 +36,30 @@ function updateDisplay() {
 let workTime = 25*60;
 let timeLeft = workTime;
 let timeId = null;
+let breakTime = 5 * 60;
+let isWorkMode = true;
+let currentInterval = 1;
 
 startButton.addEventListener("click", function() {
   if (timeId === null) {
     timeId = setInterval(function() {
       timeLeft--;
+
+    // break time ☕
+    
+      if (timeLeft <= 0 && isWorkMode === true) {
+        isWorkMode = false;
+        timeLeft = breakTime;
+        sessionStep.textContent = "Break time";
+        modeIcon.innerText = "☕";
+      } else if (timeLeft <= 0 && isWorkMode === false) {
+        currentInterval++;
+        isWorkMode = true;
+        timeLeft = workTime;
+        sessionStep.textContent = "Work " + currentInterval + " of " + totalIntervals;
+        modeIcon.innerText = "🍅";
+      }
+
       updateTimerDisplay();
     }, 1000);
   }
@@ -67,3 +87,5 @@ function updateTimerDisplay() {
     let seconds = timeLeft % 60;
     timerDisplay.innerText = String(minutes).padStart(2, "0") + ":" + String(seconds).padStart(2, "0");
 }
+
+
