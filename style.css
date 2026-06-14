@@ -48,12 +48,8 @@ body {
     margin-bottom: 32px;
 }
 
-.setup-section h2 {
-    font-size: 1.25rem;
-}
-
 .setup-section p {
-    color: #8f7a84;
+    color: #3b2f35;
 }
 
 .interval-selector {

@@ -33,10 +33,10 @@ function updateDisplay() {
 
 //botones [▶] [⏸] [↻] controles
 
-let workTime = 25*60;
+let workTime = 1*60;
 let timeLeft = workTime;
 let timeId = null;
-let breakTime = 5 * 60;
+let breakTime = 1* 60;
 let isWorkMode = true;
 let currentInterval = 1;
 
@@ -45,20 +45,27 @@ startButton.addEventListener("click", function() {
     timeId = setInterval(function() {
       timeLeft--;
 
-    // break time ☕
+    // break time ☕ / session complete 🌟
     
-      if (timeLeft <= 0 && isWorkMode === true) {
+    if (timeLeft <= 0 && isWorkMode === true) {
+        if (currentInterval === totalIntervals) {
+            clearInterval(timeId);
+            timeId = null;
+            sessionStep.innerText = "Session Complete!";
+            modeIcon.innerText = "🌟";
+        } else {
         isWorkMode = false;
         timeLeft = breakTime;
         sessionStep.textContent = "Break time";
         modeIcon.innerText = "☕";
-      } else if (timeLeft <= 0 && isWorkMode === false) {
+      }
+    } else if (timeLeft <= 0 && isWorkMode === false) {
         currentInterval++;
         isWorkMode = true;
         timeLeft = workTime;
         sessionStep.textContent = "Work " + currentInterval + " of " + totalIntervals;
         modeIcon.innerText = "🍅";
-      }
+      } 
 
       updateTimerDisplay();
     }, 1000);
