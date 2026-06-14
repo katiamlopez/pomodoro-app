@@ -34,10 +34,10 @@ function updateDisplay() {
 
 //botones [▶] [⏸] [↻] controles
 
-let workTime = 1*60;
+let workTime = 25*60;
 let timeLeft = workTime;
 let timeId = null;
-let breakTime = 1* 60;
+let breakTime = 10* 60;
 let isWorkMode = true;
 let currentInterval = 1;
 
