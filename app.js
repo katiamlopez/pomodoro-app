@@ -63,19 +63,19 @@ startButton.addEventListener("click", function() {
             clearInterval(timeId);
             timeId = null;
             sessionStep.innerText = "Session Complete!";
-            modeIcon.innerText = "🌟";
+            modeIcon.src = "./assets/icons/star-icon.png";
         } else {
         isWorkMode = false;
         timeLeft = breakTime;
         sessionStep.textContent = "Break time";
-        modeIcon.innerText = "☕";
+        modeIcon.src = "./assets/icons/coffee-icon.png";
       }
     } else if (timeLeft <= 0 && isWorkMode === false) {
         currentInterval++;
         isWorkMode = true;
         timeLeft = workTime;
         sessionStep.textContent = "Work " + currentInterval + " of " + totalIntervals;
-        modeIcon.innerText = "🍅";
+        modeIcon.src = "./assets/icons/tomato-icon.png";
       } 
 
       updateTimerDisplay();
@@ -101,7 +101,7 @@ resetButton.addEventListener("click", function(){
   timeLeft = workTime;
 
   sessionStep.textContent = "Work 1 of " + totalIntervals;
-  modeIcon.innerText = "🍅";
+  modeIcon.src = "./assets/icons/tomato-icon.png";
 
   updateTimerDisplay();
 });

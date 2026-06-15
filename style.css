@@ -34,12 +34,18 @@ body {
     text-align: center;
 }
 
+.timer-section img {
+    width: 55px;
+    height: 55px;
+}
+
 .app-header img {
-    width: 45%;
-    margin-bottom: 10px;
+    width: 60%;
+    margin-bottom: 8px;
 }
 
 .app-header p {
+    font-size: 1rem;
     color: #8f7a84;
     margin-bottom: 28px;
 }
@@ -66,7 +72,7 @@ body {
     border: none;
     border-radius: 50%;
     background-color: #f7c6d4;
-    color: #3b2f35;
+    color: #775e6a;
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
@@ -84,7 +90,6 @@ body {
 }
 
 .mode-icon {
-    font-size: 2.5rem;
     margin-bottom: 16px;
     transition: 0.3s ease;
 }
@@ -105,8 +110,8 @@ body {
   position: relative;
 
   background: conic-gradient(
-    #f7e3eb 0%,
-    #f7e3eb var(--progress),
+    #ebe8eb 0%,
+    #eae2eb var(--progress),
     #f7c6d4 var(--progress),
     #f7c6d4 100%
   );
@@ -143,12 +148,23 @@ body {
     border: none;
     border-radius: 50%;
     background-color: #f7c6d4;
-    color: #3b2f35;
+    color: #775e6a;
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .controls button:hover {
-    background-color: #f3aebe;
+    background-color: #febecd;
+}
+.control-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    display: block;
+    pointer-events: none;
 }

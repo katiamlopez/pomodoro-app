@@ -17,31 +17,41 @@
     </header>
 
     <section class="setup-section">
-        <p>Work intervals</p>
-
         <div class="interval-selector">
             <button type="button" id="decrease-intervals">−</button>
-
             <span id="interval-count">4</span>
-
             <button type="button" id="increase-intervals">+</button>
         </div>
     </section>
 
     <section class="timer-section">
       <p class="session-step" id="session-step">Work 1 of 4</p>
-      <div class="mode-icon" id="mode-icon">🍅</div>
-
+      <img src="./assets/icons/tomato-icon.png" class="mode-icon" id="mode-icon">
       <div class="timer-display" id="timer-display">
         <span id="timer-text">25:00</span>
       </div>
-
     </section>
 
     <section class="controls">
-      <button type="button" id="start-button" aria-label="Start">▶</button>
-      <button type="button" id="pause-button" aria-label="Pause">⏸</button>
-      <button type="button" id="reset-button" aria-label="Reset">↻</button>
+      <button type="button" id="start-button" aria-label="Start">
+        <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8 5v14l11-7z"></path>
+        </svg>
+      </button>
+
+      <button type="button" id="pause-button" aria-label="Pause">
+        <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 5h4v14H7z"></path>
+          <path d="M13 5h4v14h-4z"></path>
+        </svg>
+      </button>
+
+      <button type="button" id="reset-button" aria-label="Reset">
+        <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M17.7 6.3C16.2 4.9 14.2 4 12 4C7.6 4 4 7.6 4 12h2c0-3.3 2.7-6 6-6c1.7 0 3.2.7 4.2 1.8L13 11h8V3z"></path>
+          <path d="M6.3 17.7C7.8 19.1 9.8 20 12 20c4.4 0 8-3.6 8-8h-2c0 3.3-2.7 6-6 6c-1.7 0-3.2-.7-4.2-1.8L11 13H3v8z"></path>
+        </svg>
+      </button>
     </section>
 
   </section>
